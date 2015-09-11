@@ -1,6 +1,7 @@
 package tdd.pragmatists.movielist.view;
 
 import org.junit.Test;
+import tdd.pragmatists.movielist.movies.Movie;
 
 import javax.swing.event.ListDataEvent;
 import javax.swing.event.ListDataListener;
@@ -18,7 +19,7 @@ public class MovieListModelShould {
         ListDataListener listener = mock(ListDataListener.class);
         movieListModel.addListDataListener(listener);
 
-        movieListModel.update(new ArrayList<>());
+        movieListModel.update(new ArrayList<Movie>());
 
         verify(listener).contentsChanged(any(ListDataEvent.class));
     }
